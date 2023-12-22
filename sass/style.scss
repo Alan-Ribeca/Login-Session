@@ -1,0 +1,183 @@
+// media query
+@mixin tablet {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}
+@mixin pc {
+  @media screen and (min-width: 1800px) {
+    @content;
+  }
+}
+
+// vairbales
+$color-texto: rgba(255, 255, 255, 0.842);
+$color-input: rgb(255, 255, 255);
+$color-input-fondo: rgba(94, 94, 94, 0.219);
+$color-input-placeholder: rgba(201, 199, 199, 0.843);
+body {
+  margin: 0;
+  overflow: hidden;
+  background: url("../img/mediana2.jpg") center/cover no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.ocultoPagina {
+  display: none;
+}
+
+.oculto {
+  display: none;
+}
+
+.login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff28;
+    width: 20%;
+    height: 40%;
+    padding: 20px;
+    border-radius: 20px;
+
+    @include tablet {
+      width: auto;
+      height: auto;
+    }
+
+    @include pc {
+      width: 400px;
+    }
+
+    h2 {
+      color: $color-texto;
+    }
+
+    .inputText {
+      margin-bottom: 35px;
+    }
+
+    input {
+      width: 78%;
+      height: 10%;
+      color: $color-input;
+      background-color: $color-input-fondo;
+      border: none;
+      cursor: pointer;
+      &:placeholder {
+        color: $color-input-placeholder;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .olvido {
+      margin-left: auto;
+      margin-top: 15px;
+      margin-bottom: 35px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .iniciar {
+      width: 33%;
+      margin-bottom: 15px;
+      background: linear-gradient(to right, #5eaed2, #2877a1);
+      border: none;
+      border-radius: 5px;
+      height: 9%;
+      color: $color-texto;
+      font-size: medium;
+      cursor: pointer;
+    }
+
+    p {
+      margin: auto;
+      color: $color-texto;
+    }
+    strong {
+      text-align: center;
+      display: block;
+      cursor: pointer;
+      color: $color-input-placeholder;
+
+      &:hover {
+        color: #5eaed2;
+      }
+    }
+  }
+}
+
+.crearCuenta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1568627451);
+  width: 20%;
+  height: 40%;
+  padding: 20px;
+  border-radius: 20px;
+  .tituloCrearCuenta {
+    color: $color-texto;
+  }
+  input {
+    width: 78%;
+    height: 10%;
+    margin-bottom: 35px;
+    color: rgb(255, 255, 255);
+    background-color: $color-input-fondo;
+    border: none;
+    cursor: pointer;
+    &:placeholder {
+      color: $color-input-placeholder;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .crear {
+    width: 40%;
+    margin-top: 15px;
+    background: linear-gradient(to right, #5eaed2, #2877a1);
+    border: none;
+    border-radius: 5px;
+    height: 9%;
+    color: $color-texto;
+    font-size: medium;
+    cursor: pointer;
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+.pagVisible {
+  text-align: center;
+
+  .paginaPrincipal {
+    color: $color-texto;
+    font-size: xx-large;
+  }
+  .h2Viajar {
+    color: $color-texto;
+  }
+}
+
+.error {
+  color: white;
+  margin: 0;
+}
+
+.aviso {
+  text-align: center;
+  position: relative;
+  top: -20px;
+}

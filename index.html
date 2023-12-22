@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Aventurarse</title>
+</head>
+
+<body>
+    <main>
+        <section class="ocultoPagina">
+            <h1 class="paginaPrincipal">Bienvenido a aventurarse</h1>
+            <p class="h2Viajar">¿Estas list@ para viajar?</p>
+        </section>
+        <section class="login">
+            <form class="oculto">
+                <h2 class="tituloCrearCuenta">Crear cuenta</h2>
+                <input id="usuario" type="text" name="usuario" placeholder="Nombre de Usuario">
+                <input id="email" type="email" name="email" placeholder="Ingrese su email">
+                <input id="password" type="password" name="password" placeholder="Contraseña">
+                <input id="passwordDos" type="password" name="passwordDos" placeholder="Repita su contraseña">
+                <button class="crear" type="submit" disabled>Crear cuenta</button>
+            </form>
+            <form class="formulario">
+                <h2>Por favor iniciar sesión</h2>
+                <input id="usuarioSesion" type="usuario" name="usuarioSesion" placeholder="Usuario" class="inputText">
+                <input id="passwordSesion" type="password" name="passwordSesion" placeholder="Contraseña"
+                    class="inputPassword">
+                <strong class="olvido">¿Olvidó su contraseña?</strong>
+                <button class="iniciar">Iniciar</button>
+                <p>¿No tienes una cuenta? <br><strong class="nuevaCuenta">Crear una</strong></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="./index.js" type="module"></script>
+</body>
+
+</html>

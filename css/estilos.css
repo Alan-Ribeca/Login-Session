@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: url("../img/mediana2.jpg") center/cover no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.ocultoPagina {
+  display: none;
+}
+
+.oculto {
+  display: none;
+}
+
+.login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.login .formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1568627451);
+  width: 20%;
+  height: 40%;
+  padding: 20px;
+  border-radius: 20px;
+}
+@media screen and (max-width: 1400px) {
+  .login .formulario {
+    width: auto;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .login .formulario {
+    width: 400px;
+  }
+}
+.login .formulario h2 {
+  color: rgba(255, 255, 255, 0.842);
+}
+.login .formulario .inputText {
+  margin-bottom: 35px;
+}
+.login .formulario input {
+  width: 78%;
+  height: 10%;
+  color: rgb(255, 255, 255);
+  background-color: rgba(94, 94, 94, 0.219);
+  border: none;
+  cursor: pointer;
+}
+.login .formulario input:placeholder {
+  color: rgba(201, 199, 199, 0.843);
+}
+.login .formulario input:focus {
+  outline: none;
+}
+.login .formulario .olvido {
+  margin-left: auto;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+.login .formulario .olvido:hover {
+  cursor: pointer;
+}
+.login .formulario .iniciar {
+  width: 33%;
+  margin-bottom: 15px;
+  background: linear-gradient(to right, #5eaed2, #2877a1);
+  border: none;
+  border-radius: 5px;
+  height: 9%;
+  color: rgba(255, 255, 255, 0.842);
+  font-size: medium;
+  cursor: pointer;
+}
+.login .formulario p {
+  margin: auto;
+  color: rgba(255, 255, 255, 0.842);
+}
+.login .formulario strong {
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  color: rgba(201, 199, 199, 0.843);
+}
+.login .formulario strong:hover {
+  color: #5eaed2;
+}
+
+.crearCuenta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1568627451);
+  width: 20%;
+  height: 40%;
+  padding: 20px;
+  border-radius: 20px;
+}
+.crearCuenta .tituloCrearCuenta {
+  color: rgba(255, 255, 255, 0.842);
+}
+.crearCuenta input {
+  width: 78%;
+  height: 10%;
+  margin-bottom: 35px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(94, 94, 94, 0.219);
+  border: none;
+  cursor: pointer;
+}
+.crearCuenta input:placeholder {
+  color: rgba(201, 199, 199, 0.843);
+}
+.crearCuenta input:focus {
+  outline: none;
+}
+.crearCuenta .crear {
+  width: 40%;
+  margin-top: 15px;
+  background: linear-gradient(to right, #5eaed2, #2877a1);
+  border: none;
+  border-radius: 5px;
+  height: 9%;
+  color: rgba(255, 255, 255, 0.842);
+  font-size: medium;
+  cursor: pointer;
+}
+.crearCuenta .crear:disabled {
+  opacity: 0.5;
+}
+
+.pagVisible {
+  text-align: center;
+}
+.pagVisible .paginaPrincipal {
+  color: rgba(255, 255, 255, 0.842);
+  font-size: xx-large;
+}
+.pagVisible .h2Viajar {
+  color: rgba(255, 255, 255, 0.842);
+}
+
+.error {
+  color: white;
+  margin: 0;
+}
+
+.aviso {
+  text-align: center;
+  position: relative;
+  top: -20px;
+}
+
+/*# sourceMappingURL=estilos.css.map */
