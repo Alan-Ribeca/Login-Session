@@ -58,6 +58,6 @@ function iniciarSession() {
     paginaPrincipal.classList.remove("ocultoPagina");
     paginaPrincipal.classList.add("pagVisible");
 
-    const urlImagen = "../img/principalChico.jpg";
+    const urlImagen = "https://alan-ribeca.github.io/Login-Session/img/imgPagPrincipal.jpg ";
     document.body.style.backgroundImage = "url('" + urlImagen + "')";
 }
