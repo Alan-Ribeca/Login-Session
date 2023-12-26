@@ -58,6 +58,6 @@ function iniciarSession() {
     paginaPrincipal.classList.remove("ocultoPagina");
     paginaPrincipal.classList.add("pagVisible");
 
-    const urlImagen = "../img/imgPagPrincipal.jpg";
+    const urlImagen = "../img/principalChico.jpg";
     document.body.style.backgroundImage = "url('" + urlImagen + "')";
 }
