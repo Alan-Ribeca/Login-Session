@@ -7,7 +7,8 @@ const loginUsuario = document.querySelector("#usuarioSesion");
 const loginPassword = document.querySelector("#passwordSesion");
 const btnIniciar = document.querySelector(".iniciar");
 const paginaPrincipal = document.querySelector(".ocultoPagina");
-let usuariosLocal = JSON.parse(localStorage.getItem("usuarios"))
+let usuariosLocal = JSON.parse(localStorage.getItem("usuarios"));
+
 
 btnIniciar.addEventListener("click", (e) => {
     e.preventDefault()
@@ -57,5 +58,6 @@ function iniciarSession() {
     paginaPrincipal.classList.remove("ocultoPagina");
     paginaPrincipal.classList.add("pagVisible");
 
-    document.body.style.backgroundImage = "url('../img/imgPagPrincipal.jpg')";
+    const urlImagen = "../img/imgPagPrincipal.jpg";
+    document.body.style.backgroundImage = "url('" + urlImagen + "')";
 }

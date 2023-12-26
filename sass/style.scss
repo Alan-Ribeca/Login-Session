@@ -13,8 +13,8 @@
 // vairbales
 $color-texto: rgba(255, 255, 255, 0.842);
 $color-input: rgb(255, 255, 255);
-$color-input-fondo: rgba(94, 94, 94, 0.219);
-$color-input-placeholder: rgba(201, 199, 199, 0.843);
+$color-input-fondo: rgba(141, 128, 128, 0.219);
+$color-input-placeholder: rgba(190, 190, 190, 0.808);
 body {
   margin: 0;
   overflow: hidden;
@@ -59,22 +59,23 @@ body {
       color: $color-texto;
     }
 
-    .inputText {
-      margin-bottom: 35px;
-    }
-
     input {
       width: 78%;
       height: 10%;
+      margin-top: 20px;
       color: $color-input;
       background-color: $color-input-fondo;
       border: none;
       cursor: pointer;
-      &:placeholder {
+      &::placeholder {
         color: $color-input-placeholder;
       }
       &:focus {
         outline: none;
+      }
+      @include tablet {
+        margin-top: 20px;
+        height: 40px;
       }
     }
 
@@ -122,25 +123,36 @@ body {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.1568627451);
   width: 20%;
-  height: 40%;
+  height: 45%;
   padding: 20px;
   border-radius: 20px;
+
+  @include tablet {
+    width: auto;
+    height: auto;
+  }
+
   .tituloCrearCuenta {
     color: $color-texto;
   }
   input {
     width: 78%;
     height: 10%;
-    margin-bottom: 35px;
+    margin-top: 35px;
     color: rgb(255, 255, 255);
     background-color: $color-input-fondo;
     border: none;
     cursor: pointer;
-    &:placeholder {
+    &::placeholder {
       color: $color-input-placeholder;
     }
     &:focus {
       outline: none;
+    }
+
+    @include tablet {
+      margin-top: 20px;
+      height: 40px;
     }
   }
   .crear {
