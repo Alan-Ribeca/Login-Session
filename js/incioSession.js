@@ -1,38 +1,79 @@
-import { usuario, usuarios } from "./crearCuenta.js";
-import { formularioSession } from "./ocultarYmostrar.js";
+import { usuario, usuarios, email, validarEmail } from "./crearCuenta.js";
+import { formularioSession, strongCrear } from "./ocultarYmostrar.js";
 export { usuario, usuarios, mensajeSession, iniciarSession };
-
 
 const loginUsuario = document.querySelector("#usuarioSesion");
 const loginPassword = document.querySelector("#passwordSesion");
 const btnIniciar = document.querySelector(".iniciar");
 const paginaPrincipal = document.querySelector(".ocultoPagina");
+const formulario = document.querySelector(".formulario");
+const olvido = document.querySelector(".olvido");
+const h2 = document.querySelector(".iniciarSesion");
+const p = document.querySelector(".cuenta");
 let usuariosLocal = JSON.parse(localStorage.getItem("usuarios"));
-
 
 btnIniciar.addEventListener("click", (e) => {
     e.preventDefault()
     let usuario = loginUsuario.value;
     let password = loginPassword.value;
 
+    if (usuariosLocal === null) {
+       mensajeSession("Usuario no registrado");
+        return;
+    }
+
     let usuarioEncontrado = usuariosLocal.find(u => u.usuario === usuario);
     let passwordCorrecta = usuariosLocal.find(u => u.password === password);
 
     if (usuarioEncontrado && passwordCorrecta) {
-        //ACA SE MUESTRA LA PAG 
-        // console.log("Ambos coinciden")
         iniciarSession();
     } else if (usuarioEncontrado && !passwordCorrecta) {
-        console.log("El usuario coincide, pero la contraseña no")
-        mensajeSession(`Nombre de usuario o contraseña incorrecta`);
+        mensajeSession("Nombre de usuario o contraseña incorrecta");
     } else if (!usuarioEncontrado && passwordCorrecta) {
-        console.log("La contraseña coincide, pero el usuario no")
-        mensajeSession(`Nombre de usuario o contraseña incorrecta`);
+        mensajeSession("Nombre de usuario o contraseña incorrecta");
     } else {
-        console.log("Ni el usuario ni la contraseña coinciden")
-        mensajeSession(`Nombre de usuario o contraseña incorrecta`);
+        mensajeSession("Nombre de usuario o contraseña incorrecta");
     }
 })
+
+
+
+olvido.addEventListener("click", () => {
+    h2.innerHTML = "Recuperar cuenta";
+    btnIniciar.innerHTML = "Enviar";
+
+    loginUsuario.style.display = "none";
+    loginPassword.style.display = "none";
+    olvido.style.visibility = "hidden";
+    p.style.display = "none";
+
+    let email = document.createElement('input');
+    email.type = 'email';
+    email.name = 'email';
+    email.placeholder = 'Email';
+    email.className = 'inputEmail';
+    email.addEventListener("input", validarEmail)
+    formulario.insertBefore(email, document.querySelector('.olvido'));
+
+    btnIniciar.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (localStorage.getItem('usuarios') === null) {
+            mensajeSession("Usuario no registrado")
+            p.style.display = "block"
+            return;
+        }
+    
+        let usuarioEncontrado = usuariosLocal.find(u => u.email === email.value);
+
+        if (usuarioEncontrado) {
+            mensajeSession("Recibiste instrucciones por email.")
+        } else {
+            mensajeSession("Email no registrado");
+        }
+    })
+})
+
 
 function mensajeSession(mensaje) {
     const mensajeExistente = document.querySelector(".aviso");
@@ -43,8 +84,6 @@ function mensajeSession(mensaje) {
     const textoAviso = document.createElement("P");
     textoAviso.classList.add("aviso")
     textoAviso.textContent = mensaje;
-
-    const formulario = document.querySelector(".formulario");
 
     formulario.insertBefore(textoAviso, btnIniciar)
 }
@@ -58,6 +97,6 @@ function iniciarSession() {
     paginaPrincipal.classList.remove("ocultoPagina");
     paginaPrincipal.classList.add("pagVisible");
 
-    const urlImagen = "https://alan-ribeca.github.io/Login-Session/img/imgPagPrincipal.jpg ";
+    const urlImagen = "https://alan-ribeca.github.io/Login-Session/img/imgPagPrincipal.jpg";
     document.body.style.backgroundImage = "url('" + urlImagen + "')";
 }

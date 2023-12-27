@@ -175,4 +175,16 @@ body {
   top: -20px;
 }
 
+#usuarioSesion {
+  display: block;
+}
+
+#passwordSesion {
+  display: block;
+}
+
+.cuenta {
+  display: block;
+}
+
 /*# sourceMappingURL=estilos.css.map */

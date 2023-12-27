@@ -1,4 +1,4 @@
-export { usuario, email, password, passwordDos, form, btnCrear, usuarios }
+export { usuario, email, password, passwordDos, form, btnCrear, usuarios, validarEmail }
 
 const obj = {
     usuario: "",
@@ -19,7 +19,7 @@ usuario.addEventListener("input", validarUsuario);
 email.addEventListener("input", validarEmail);
 password.addEventListener("input", validarPassword);
 passwordDos.addEventListener("input", validarPassword);
-btnCrear.addEventListener('click', function () {
+btnCrear.addEventListener('click', () => {
     const id = Date.now().toString();
     obj.id = id;
 
@@ -31,6 +31,7 @@ btnCrear.addEventListener('click', function () {
 
     location.reload();
 });
+
 
 function mensajeError(mensaje, input) {
     const alerta = input.nextElementSibling;
@@ -99,5 +100,4 @@ function habilitarBtn(obj) {
         btnCrear.style.opacity = 1;
     }
 
-    console.log(obj)
 }

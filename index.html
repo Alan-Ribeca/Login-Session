@@ -8,17 +8,6 @@
     <title>Aventurarse</title>
 </head>
 
-
-
-        <!-- 
-            1, AGRANDAR LA PARTE DEL REGISTRO PARA ANDROID
-            2, VER PORQUE NO FUNCIONA EL MENSAJE CUANDO LA CUENTA NO ESTA CREADA Y QUEREMOS ENTRAR IGUAL 
-            3, NO CARGA LA PAG PRINCIPAL CUANDO INICIAMOS SESSION 
-        -->
-
-
-
-
 <body>
     <main>
         <section class="ocultoPagina">
@@ -35,13 +24,13 @@
                 <button class="crear" type="submit" disabled>Crear cuenta</button>
             </form>
             <form class="formulario">
-                <h2>Por favor iniciar sesión</h2>
+                <h2 class="iniciarSesion">Por favor iniciar sesión</h2>
                 <input id="usuarioSesion" type="usuario" name="usuarioSesion" placeholder="Usuario" class="inputText">
                 <input id="passwordSesion" type="password" name="passwordSesion" placeholder="Contraseña"
                     class="inputPassword">
                 <strong class="olvido">¿Olvidó su contraseña?</strong>
                 <button class="iniciar">Iniciar</button>
-                <p>¿No tienes una cuenta? <br><strong class="nuevaCuenta">Crear una</strong></p>
+                <p class="cuenta">¿No tienes una cuenta? <br><strong class="nuevaCuenta">Crear una</strong></p>
             </form>
         </section>
     </main>
@@ -50,3 +39,5 @@
 </body>
 
 </html>
+
+<!-- hacer el olvido su contraseña y listo -->
