@@ -18,7 +18,7 @@ btnIniciar.addEventListener("click", (e) => {
     let password = loginPassword.value;
 
     if (usuariosLocal === null) {
-       mensajeSession("Usuario no registrado");
+        mensajeSession("Usuario no registrado");
         return;
     }
 
@@ -37,8 +37,11 @@ btnIniciar.addEventListener("click", (e) => {
 })
 
 
-
 olvido.addEventListener("click", () => {
+    const mensajeExistente = document.querySelector(".aviso");
+    if (mensajeExistente) {
+        mensajeExistente.remove()
+    }
     h2.innerHTML = "Recuperar cuenta";
     btnIniciar.innerHTML = "Enviar";
 
@@ -63,13 +66,31 @@ olvido.addEventListener("click", () => {
             p.style.display = "block"
             return;
         }
-    
+
         let usuarioEncontrado = usuariosLocal.find(u => u.email === email.value);
 
         if (usuarioEncontrado) {
             mensajeSession("Recibiste instrucciones por email.")
+            setTimeout(() => {
+                const mensajeExistente = document.querySelector(".aviso");
+                if (mensajeExistente) {
+                    mensajeExistente.remove()
+                }
+                h2.innerHTML = "Por favor iniciar sesión";
+                btnIniciar.innerHTML = "Iniciar";
+
+                loginUsuario.style.display = "block";
+                loginPassword.style.display = "block";
+                olvido.style.visibility = "visible";
+                p.style.display = "block";
+
+                email.style.display = "none"
+                formulario.reset();
+            }, 4000);
+
         } else {
             mensajeSession("Email no registrado");
+            p.style.display = "block";
         }
     })
 })

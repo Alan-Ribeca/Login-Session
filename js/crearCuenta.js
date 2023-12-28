@@ -32,7 +32,6 @@ btnCrear.addEventListener('click', () => {
     location.reload();
 });
 
-
 function mensajeError(mensaje, input) {
     const alerta = input.nextElementSibling;
     if (alerta && alerta.classList.contains("error")) {
@@ -64,7 +63,7 @@ function validarUsuario(e) {
 
 function validarEmail(e) {
     if (e.target.value.trim() === "") {
-        mensajeError(`el ${e.target.id} no es correcto`, e.target);
+        mensajeError(`El email no es correcto`, e.target);
     } else {
         if (!validarEmailCorrecto(e.target.value)) {
             mensajeError(`El formato del email no es valido`, e.target);
