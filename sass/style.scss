@@ -4,6 +4,11 @@
     @content;
   }
 }
+@mixin celu {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
 @mixin pc {
   @media screen and (min-width: 1800px) {
     @content;
@@ -47,10 +52,13 @@ body {
     border-radius: 20px;
 
     @include tablet {
+      width: 300px;
+      height: auto;
+    }
+    @include celu {
       width: auto;
       height: auto;
     }
-
     @include pc {
       width: 400px;
     }
@@ -98,6 +106,10 @@ body {
       color: $color-texto;
       font-size: medium;
       cursor: pointer;
+
+      @include tablet {
+        height: 30px;
+      }
     }
 
     p {
@@ -128,7 +140,7 @@ body {
   border-radius: 20px;
 
   @include tablet {
-    width: auto;
+    width: 300px;
     height: auto;
   }
 
@@ -167,6 +179,9 @@ body {
     cursor: pointer;
     &:disabled {
       opacity: 0.5;
+    }
+    @include tablet {
+      height: 30px;
     }
   }
 }

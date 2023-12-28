@@ -32,6 +32,12 @@ body {
 }
 @media screen and (max-width: 1400px) {
   .login .formulario {
+    width: 300px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 480px) {
+  .login .formulario {
     width: auto;
     height: auto;
   }
@@ -84,6 +90,11 @@ body {
   font-size: medium;
   cursor: pointer;
 }
+@media screen and (max-width: 1400px) {
+  .login .formulario .iniciar {
+    height: 30px;
+  }
+}
 .login .formulario p {
   margin: auto;
   color: rgba(255, 255, 255, 0.842);
@@ -110,7 +121,7 @@ body {
 }
 @media screen and (max-width: 1400px) {
   .crearCuenta {
-    width: auto;
+    width: 300px;
     height: auto;
   }
 }
@@ -151,6 +162,11 @@ body {
 }
 .crearCuenta .crear:disabled {
   opacity: 0.5;
+}
+@media screen and (max-width: 1400px) {
+  .crearCuenta .crear {
+    height: 30px;
+  }
 }
 
 .pagVisible {
